@@ -63,10 +63,56 @@ function auswerten( userAuswahl, computerAuswahl )
         {
             ergebnis = Ergebnis.Verloren;
         }
-    } else
+    } else if ( computerAuswahl == Symbol.Papier )
     {
-        // Todo
+        if ( userAuswahl == Symbol.Schere || userAuswahl == Symbol.Echse )
+        {
+            ergebnis = Ergebnis.Gewonnen;
+        } else if ( userAuswahl == Symbol.Papier )
+        {
+            ergebnis = Ergebnis.Unentschieden;
+        } else
+        {
+            ergebnis = Ergebnis.Verloren;
+        }
+    } else if ( computerAuswahl == Symbol.Schere )
+    {
+        if ( userAuswahl == Symbol.Spock || userAuswahl == Symbol.Stein )
+        {
+            ergebnis = Ergebnis.Gewonnen;
+        } else if ( userAuswahl == Symbol.Schere )
+        {
+            ergebnis = Ergebnis.Unentschieden;
+        } else
+        {
+            ergebnis = Ergebnis.Verloren;
+        }
+    } else if ( computerAuswahl == Symbol.Echse )
+    {
+        if ( userAuswahl == Symbol.Stein || userAuswahl == Symbol.Schere )
+        {
+            ergebnis = Ergebnis.Gewonnen;
+        } else if ( userAuswahl == Symbol.Echse )
+        {
+            ergebnis = Ergebnis.Unentschieden;
+        } else
+        {
+            ergebnis = Ergebnis.Verloren;
+        }
+    } else if ( computerAuswahl == Symbol.Spock )
+    {
+        if ( userAuswahl == Symbol.Echse || userAuswahl == Symbol.Papier )
+        {
+            ergebnis = Ergebnis.Gewonnen;
+        } else if ( userAuswahl == Symbol.Spock )
+        {
+            ergebnis = Ergebnis.Unentschieden;
+        } else
+        {
+            ergebnis = Ergebnis.Verloren;
+        }
     }
+
 
     return ergebnis;
 }
