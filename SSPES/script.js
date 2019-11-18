@@ -65,7 +65,8 @@ function auswerten( userAuswahl, computerAuswahl )
         }
     } else
     {
-        // Todo
+        // Todo: Erweitern.
+        ergebnis = Ergebnis.Verloren;
     }
 
     return ergebnis;
