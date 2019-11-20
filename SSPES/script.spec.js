@@ -1,4 +1,4 @@
-var spiel = require( './script' );
+var spiel = require( './script.wilhelm-fritz-v2' );
 var auswerten = spiel.auswerten;
 var Symbol = spiel.Symbol;
 var Ergebnis = spiel.Ergebnis;
@@ -40,6 +40,21 @@ describe( 'Spielregeln', function () {
     } );
     it( 'Stein schleift Schere', function () {
         gewinntGegen( Symbol.Stein, Symbol.Schere );
+    } );
+    it( 'Schere u. Schere', function () {
+        expect( auswerten( Symbol.Schere, Symbol.Schere ) ).toBe( Ergebnis.Unentschieden );
+    } );
+    it( 'Stein u. Stein', function () {
+        expect( auswerten( Symbol.Stein, Symbol.Stein ) ).toBe( Ergebnis.Unentschieden );
+    } );
+    it( 'Papier u. Papier', function () {
+        expect( auswerten( Symbol.Papier, Symbol.Papier ) ).toBe( Ergebnis.Unentschieden );
+    } );
+    it( 'Echse u. Echse', function () {
+        expect( auswerten( Symbol.Echse, Symbol.Echse ) ).toBe( Ergebnis.Unentschieden );
+    } );
+    it( 'Spock u. Spock', function () {
+        expect( auswerten( Symbol.Spock, Symbol.Spock ) ).toBe( Ergebnis.Unentschieden );
     } );
 } );
 
